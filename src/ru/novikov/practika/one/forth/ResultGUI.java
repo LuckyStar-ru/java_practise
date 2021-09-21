@@ -17,6 +17,7 @@ public class ResultGUI extends JFrame {
 
     public ResultGUI() {
         super("Match result");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         setSize(450, 90);
         add(buttonMilan, BorderLayout.WEST);

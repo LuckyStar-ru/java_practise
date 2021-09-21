@@ -19,7 +19,7 @@ public class Main {
         System.out.println(c1.isFilled());
         System.out.println(c1.getRadius());
 
-        Shape s2 = new Shape(); // We cant create instance of abstract class
+        Shape s2 = new Shape();
 
         Shape s3 = new Rectangle(1.0, 2.0, "RED", false); // Upcast
         System.out.println(s3);
@@ -56,5 +56,5 @@ public class Main {
         System.out.println(sq1.getColor());
         System.out.println(sq1.getSide());
         System.out.println(sq1.getLength());
-    }*/
+    } */
 }
