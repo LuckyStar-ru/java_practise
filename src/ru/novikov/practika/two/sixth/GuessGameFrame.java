@@ -30,17 +30,20 @@ public class GuessGameFrame extends JFrame {
             try {
                 int val = Integer.parseInt(stringValue);
                 if (val < 0 || val > 20) {
-                    JOptionPane.showMessageDialog(null, "Ошибка! Число должно быть от 1 до 20!");
+                    JOptionPane.showMessageDialog(null, "Ошибка!" +
+                            "\nЧисло должно быть от 1 до 20!");
                 } else {
                     if (val == guessedValue) {
-                        JOptionPane.showMessageDialog(null, "Вы угадали число! Поздравляю!");
+                        JOptionPane.showMessageDialog(null, "Вы угадали число!" +
+                                "\nПоздравляю!");
                         dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
                     } else {
                         if (tryes <= 0) {
-                            JOptionPane.showMessageDialog(null, "Вы проиграли! Число было " + val);
+                            JOptionPane.showMessageDialog(null, "Вы проиграли!" +
+                                    "\nЧисло было " + guessedValue);
                             dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
                         } else {
-                            JOptionPane.showMessageDialog(null, "Вы не угадали число! " +
+                            JOptionPane.showMessageDialog(null, "Вы не угадали число!" +
                                     "\nОсталось попыток: " + tryes +
                                     "\nЗагаданное число: " + ((val > guessedValue) ? "Меньше " + val  : "Больше " + val));
                             tryes--;
