@@ -1,4 +1,4 @@
-package ru.novikov.practika.seventh;
+package ru.novikov.practika.one.seventh;
 
 import java.util.*;
 
@@ -26,12 +26,21 @@ public class Main {
             }
             System.out.println("Введённая последовательность: " + Arrays.toString(array));
         }
-        Stack<Integer> stack = new Stack<>();
-        DrunkGame drunkGame = new DrunkGame(array);
-        drunkGame.startGame();
-        switch (drunkGame.getResult()) {
-            case 1 -> System.out.println("Выйграл первый игрок! Ходов: " + drunkGame.getCount());
-            case 2 -> System.out.println("Выйграл второй игрок! Ходов: " + drunkGame.getCount());
+
+        DrunkStackGame drunkStackGame = new DrunkStackGame(array);
+        DrunkQueueGame drunkQueueGame = new DrunkQueueGame(array);
+
+        drunkQueueGame.startGame();
+
+        drunkStackGame.startGame();
+        switch (drunkQueueGame.getResult()) {
+            case 1 -> System.out.println("Выйграл первый игрок! Ходов: " + drunkQueueGame.getCount());
+            case 2 -> System.out.println("Выйграл второй игрок! Ходов: " + drunkQueueGame.getCount());
+            case 3 -> System.out.println("Ботва!");
+        }
+        switch (drunkStackGame.getResult()) {
+            case 1 -> System.out.println("Выйграл первый игрок! Ходов: " + drunkStackGame.getCount());
+            case 2 -> System.out.println("Выйграл второй игрок! Ходов: " + drunkStackGame.getCount());
             case 3 -> System.out.println("Ботва!");
         }
     }
